@@ -1,0 +1,9 @@
+============================= test session starts =============================
+platform win32 -- Python 3.8.2, pytest-5.4.2, py-1.8.1, pluggy-0.13.1 -- C:\Users\rapha\AppData\Local\Programs\Python\Python38\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\rapha\codenation\python-5
+collecting ... collected 1 item
+
+test_main.py::TestChallenge1::test_len PASSED                            [100%]
+
+============================== 1 passed in 0.11s ==============================
