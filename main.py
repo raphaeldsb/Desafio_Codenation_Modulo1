@@ -1,5 +1,4 @@
-from datetime import datetime
-import timedelta
+from datetime import datetime, timedelta
 
 FIXED_VALUE = 0.36
 MINUTE_VALUE = 0.09
@@ -84,7 +83,7 @@ records = [
 
 def classify_by_phone_number(records):
     '''
-    Retorna uma lista de dicionários agrupada pele source e ordenada pelo total
+    Retorna uma lista de dicionários agrupada pelo atributo source e ordenada pelo total
     em ordem decrescente.
     '''
     records = sorted(records, key=lambda k: k['source'], reverse=True)
@@ -103,6 +102,9 @@ def classify_by_phone_number(records):
             records_group[-1]['total'] += total
         else:
             records_group.append(dict_aux)
+
+    for record_group in records_group:
+        record_group['total'] = round(record_group['total'], 2)
 
     return sorted(records_group, key=lambda k: k['total'], reverse=True)
 
@@ -123,4 +125,4 @@ def calculates_call_value(hour_start, hour_end):
 
         hour_start += timedelta(minutes=1)
 
-    return round(total, 2)
+    return total
